@@ -7,3 +7,6 @@ Either earlier or later..
 ACS scripts:
 FreshTest.o - script 999 and script 998 with AmbientSounds to be played at max volume
 FreshMeat.o - Unknown; I absolutely have no idea what I wanted to achieve with it.
+
+Credits:
+Pudge's voice - Valve
