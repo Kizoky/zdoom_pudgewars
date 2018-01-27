@@ -1,0 +1,9 @@
+script 999 (void)
+{
+AmbientSound("pudgethrow", 255);
+}
+
+script 998 (void)
+{
+AmbientSound("pudgealt", 255);
+}

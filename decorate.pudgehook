@@ -1,0 +1,72 @@
+// 999 is PudgeThrow, 998 is PudgeAlt
+
+ACTOR Pudgehook : DoomWeapon 
+{
+  Game Doom
+  Weapon.SelectionOrder 1900
+  Weapon.AmmoUse 0
+  Weapon.AmmoGive 1
+  Weapon.AmmoType "Clip"
+  Obituary "$OB_MPPISTOL"
+  +WEAPON.WIMPY_WEAPON
+  Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
+  Tag "$TAG_PISTOL"
+  States
+  {
+  Ready:
+    PUDG A 1 A_WeaponReady
+    Loop
+  Deselect:
+    PUDG A 1 A_Lower
+    Loop
+  Select:
+    PUDG A 1 A_Raise
+    Loop
+  Fire:
+    PUDG A 4
+    PUDG B 4
+    PUDG C 4
+	PUDG A 0 ACS_Execute(999,0,0,0,0)
+	PUDG A 0 A_PlaySound("pudgehook")
+	PUDG D 13 A_FireCustomMissile("LoreShot")
+    Goto Ready
+  AltFire:
+    PUDG A 0 A_PlaySound("pudgemeat")
+    MEAT A 5
+	MEAT B 5
+	PUDG A 0 ACS_Execute(998,0,0,0,0)
+	MEAT C 6 A_CustomPunch(2*random(8, 10), TRUE)
+	MEAT D 5
+	MEAT C 2
+	MEAT B 2
+	MEAT A 2
+//////////////////to avoid confuse
+	MEA2 A 5
+	MEA2 B 5
+	PUDG A 0 ACS_Execute(998,0,0,0,0)
+	MEA2 C 6 A_CustomPunch(2*random(8, 10), TRUE)
+	MEA2 B 2
+	MEA2 A 2
+	MEAT A 1
+	MEAT A 5
+	MEAT B 5
+	PUDG A 0 ACS_Execute(998,0,0,0,0)
+	MEAT C 6 A_CustomPunch(2*random(8, 10), TRUE)
+	MEAT D 5
+	MEAT C 2
+	MEAT B 2
+	MEAT A 2
+//////////////////to avoid confuse
+	MEA2 A 5
+	MEA2 B 5
+	PUDG A 0 ACS_Execute(998,0,0,0,0)
+	MEA2 C 6 A_CustomPunch(2*random(8, 10), TRUE)
+	MEA2 B 2
+	MEA2 A 2
+	MEAT A 2
+	Goto Ready
+  Spawn:
+    PUDG A -1
+    Stop
+  }
+}

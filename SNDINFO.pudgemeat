@@ -1,0 +1,8 @@
+$random pudgemeat { blank pudgemeat1  pudgemeat2 pudgemeat3 }
+
+pudgemeat1 KZMEAT1
+pudgemeat2 KZMEAT2
+pudgemeat3 KZMEAT3
+blank KZBLANK
+
+// 1/2 chance to trigger the Pudgemeat sound.
